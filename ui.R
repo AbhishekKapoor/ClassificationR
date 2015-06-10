@@ -31,14 +31,12 @@ shinyUI(fluidPage(theme = "bootstrap.css",titlePanel("SmartR-Classfication Tool"
                                           br(),
                                           p("the app uses the", 
                                             span("psych package", style = "color:red"), "by William Revelle")),
-                                 tabPanel("Summary", id="tabSummary", verbatimTextOutput("Summary"),
-                                 tabPanel("NoofFactors", id="tabNoofFactors", 
-                                          plotOutput("nf", width="100%",height="800px")),
+                                 tabPanel("Summary", id="tabSummary", verbatimTextOutput("Summary")),
+                                 tabPanel("Cross Validation", id="tabCV", 
+                                          verbatimTextOutput("crv")),
                                  tabPanel("Components", id="tabComponents", 
-                                          verbatimTextOutput("loadings")), 
-                                 tabPanel("Factors", id="tabFactors", 
-                                          plotOutput("corrgramF", width="90%", height="800px"), 
-                                          selected="Documentations"
-                                 ))}
+                                          verbatimTextOutput("loadings"))
+                                                                )
+                      }
                   )
 ))
